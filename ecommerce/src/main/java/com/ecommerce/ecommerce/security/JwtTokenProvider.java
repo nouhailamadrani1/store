@@ -44,4 +44,8 @@ public class JwtTokenProvider {
         Date expiration = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody().getExpiration();
         return expiration.before(new Date());
     }
+    public String invalidateToken(String token) {
+        Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
+        return null;
+    }
 }

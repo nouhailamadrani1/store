@@ -75,4 +75,8 @@ public class UserService implements UserDetailsService {
     public boolean validateToken(String token, UserDetails userDetails) {
         return jwtTokenProvider.validateToken(token, userDetails);
     }
+
+    public void logoutUser(String token) {
+        jwtTokenProvider.invalidateToken(token);
+    }
 }
