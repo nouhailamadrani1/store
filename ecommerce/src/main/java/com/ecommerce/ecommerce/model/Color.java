@@ -2,7 +2,7 @@ package com.ecommerce.ecommerce.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.List;
+
 
 @Getter
 @Setter
@@ -10,16 +10,11 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Role {
-
+public class Color {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     private String name;
 
-    @ManyToMany(mappedBy = "roles")
-    private List<User> users;
-
 }
-

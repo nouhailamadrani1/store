@@ -6,6 +6,7 @@ import com.ecommerce.ecommerce.dto.UserResponseDto;
 import com.ecommerce.ecommerce.model.User;
 import com.ecommerce.ecommerce.repository.UserRepository;
 import com.ecommerce.ecommerce.security.JwtTokenProvider;
+import com.ecommerce.ecommerce.service.impl.UserDetailsImpl;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;

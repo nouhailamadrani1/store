@@ -2,7 +2,6 @@ package com.ecommerce.ecommerce.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.List;
 
 @Getter
 @Setter
@@ -10,16 +9,16 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Role {
-
+public class File {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
-    private String name;
+    private String path;
 
-    @ManyToMany(mappedBy = "roles")
-    private List<User> users;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
+
 
 }
-

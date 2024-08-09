@@ -1,8 +1,8 @@
 package com.ecommerce.ecommerce.model;
-
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.List;
+
+import java.util.Set;
 
 @Getter
 @Setter
@@ -10,16 +10,18 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Role {
-
+public class Vendor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
+    private String email;
+    private String profilePicture;
+    private String phoneNumber;
+    private String storeName;
 
-    @ManyToMany(mappedBy = "roles")
-    private List<User> users;
+
+    @OneToMany(mappedBy = "vendor")
+    private Set<Product> products;
 
 }
-
